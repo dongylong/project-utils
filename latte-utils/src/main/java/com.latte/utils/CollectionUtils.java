@@ -18,6 +18,12 @@ public class CollectionUtils {
                         .toMap(ObjectDemo::getNum, a -> a, (v1, v2) -> v2));
         return objectDemoMap;
     }
+    public static  List<Integer> listClass2ListProperty(List<ObjectDemo> demoList) {
+        List<Integer> nums = demoList.stream()
+                .map(ObjectDemo::getNum)
+                .collect(Collectors.toList());
+        return nums;
+    }
 
     public static String map2String(Map<String, ObjectDemo> objectDemoMap) {
         String demoNames = objectDemoMap.values().stream()
