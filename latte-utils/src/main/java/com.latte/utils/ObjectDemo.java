@@ -1,4 +1,4 @@
-package com.project.utils;
+package com.latte.utils;
 
 public class ObjectDemo {
     private int num;
