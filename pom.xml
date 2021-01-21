@@ -11,6 +11,7 @@
     <modules>
         <module>tencent-service</module>
         <module>latte-utils</module>
+        <module>study-demo</module>
         <module>leet-code</module>
         <module>study-demo</module>
         <module>design-pattern</module>
