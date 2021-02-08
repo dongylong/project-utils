@@ -13,8 +13,8 @@ public class CollectionUtils {
     }
 
     public static Map<Integer, ObjectDemo> list2Map(List<ObjectDemo> demoList) {
-        Map<Integer, ObjectDemo> objectDemoMap = demoList.stream().
-                collect(Collectors
+        Map<Integer, ObjectDemo> objectDemoMap = demoList.stream()
+                .collect(Collectors
                         .toMap(ObjectDemo::getNum, a -> a, (v1, v2) -> v2));
         return objectDemoMap;
     }
