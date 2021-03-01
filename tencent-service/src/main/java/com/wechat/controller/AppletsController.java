@@ -1,4 +1,4 @@
-package com.applets.controller;
+package com.wechat.controller;
 
 /**
  * @author dongyl-work
