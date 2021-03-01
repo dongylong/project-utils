@@ -1,7 +1,19 @@
 package com.design.patter.observer;
 
-import java.util.Observable;
+public class WeatherDate implements Subject{//extends Observable
 
-public class WeatherDate extends Observable {
+    @Override
+    public void registerObserver(Observer o) {
 
+    }
+
+    @Override
+    public void removeObserver(Observer o) {
+
+    }
+
+    @Override
+    public void notifyObservers() {
+
+    }
 }
