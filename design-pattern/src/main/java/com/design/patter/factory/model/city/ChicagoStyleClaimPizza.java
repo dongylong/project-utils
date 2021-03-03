@@ -13,7 +13,7 @@ public class ChicagoStyleClaimPizza extends Pizza {
 
     }
     public void cut() {
-
+        System.out.println("ChicagoStyleClaimPizza cut");
     }
 
 }
