@@ -14,6 +14,7 @@
         <module>leet-code</module>
         <module>study-demo</module>
         <module>design-pattern</module>
+        <module>alg</module>
     </modules>
 
     <properties>
