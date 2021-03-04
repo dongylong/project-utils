@@ -12,6 +12,7 @@
         <module>tencent-service</module>
         <module>latte-utils</module>
         <module>leet-code</module>
+        <module>alg</module>
     </modules>
 
     <properties>
