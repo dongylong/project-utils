@@ -1,6 +1,6 @@
 package com.design.patter.factory.v3;
 
-import com.design.patter.ingredient.PizzaIngredientFactory;
+import com.design.patter.factory.ingredient.PizzaIngredientFactory;
 
 public class VeggiePizza extends Pizza {
     PizzaIngredientFactory ingredientFactory;

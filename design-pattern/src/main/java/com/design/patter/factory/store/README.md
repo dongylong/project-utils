@@ -1,0 +1,2 @@
+PizzaStore 通过一个抽象接口创建一个产品
+ChicagoPizzaStore、NYPizzaStore每个子类决定实例化那些具体类

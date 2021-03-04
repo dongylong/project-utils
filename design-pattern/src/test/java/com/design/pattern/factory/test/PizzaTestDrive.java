@@ -1,6 +1,6 @@
 package com.design.pattern.factory.test;
 
-import com.design.patter.factory.Pizza;
+import com.design.patter.factory.v2.Pizza;
 import com.design.patter.factory.model.enums.EPizzaTypeEnum;
 import com.design.patter.factory.store.ChicagoPizzaStore;
 import com.design.patter.factory.store.NYPizzaStore;

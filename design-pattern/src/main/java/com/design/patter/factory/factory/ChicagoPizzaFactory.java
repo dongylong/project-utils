@@ -1,9 +1,9 @@
 package com.design.patter.factory.factory;
 
-import com.design.patter.factory.Pizza;
-import com.design.patter.factory.model.city.ChicagoStyleCheesePizza;
-import com.design.patter.factory.model.city.ChicagoStylePepperoniPizza;
-import com.design.patter.factory.model.city.ChicagoStyleVeggiePizza;
+import com.design.patter.factory.v2.Pizza;
+import com.design.patter.factory.v2.city.ChicagoStyleCheesePizza;
+import com.design.patter.factory.v2.city.ChicagoStylePepperoniPizza;
+import com.design.patter.factory.v2.city.ChicagoStyleVeggiePizza;
 import com.design.patter.factory.model.enums.EPizzaTypeEnum;
 import com.design.patter.factory.store.PizzaStore;
 

@@ -2,8 +2,8 @@ package com.design.patter.factory.v3;
 
 
 import com.design.patter.factory.model.enums.EPizzaTypeEnum;
-import com.design.patter.ingredient.NYPizzaIngredientFactory;
-import com.design.patter.ingredient.PizzaIngredientFactory;
+import com.design.patter.factory.ingredient.NYPizzaIngredientFactory;
+import com.design.patter.factory.ingredient.PizzaIngredientFactory;
 
 public class NYPizzaStore extends PizzaStore {
     protected Pizza createPizza(EPizzaTypeEnum pizzaTypeEnum) {

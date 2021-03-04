@@ -1,7 +1,7 @@
 package com.design.patter.factory.store;
 
 import com.design.patter.factory.model.enums.EPizzaTypeEnum;
-import com.design.patter.factory.Pizza;
+import com.design.patter.factory.v2.Pizza;
 
 public abstract class PizzaStore {
 
