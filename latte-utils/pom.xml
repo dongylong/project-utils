@@ -12,6 +12,12 @@
     <artifactId>latte-utils</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-javanica</artifactId>
+            <version>1.5.12</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-sleuth -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
