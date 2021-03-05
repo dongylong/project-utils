@@ -1,0 +1,1 @@
+command 调用 run，若run超时/异常，且启用降级处理，调用getFallback 方法降级
