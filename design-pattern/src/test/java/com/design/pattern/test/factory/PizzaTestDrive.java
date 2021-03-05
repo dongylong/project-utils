@@ -1,4 +1,4 @@
-package com.design.pattern.factory.test;
+package com.design.pattern.test.factory;
 
 import com.design.patter.factory.v2.Pizza;
 import com.design.patter.factory.model.enums.EPizzaTypeEnum;

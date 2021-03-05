@@ -1,6 +1,5 @@
 package com.design.patter.factory;
 
-import com.design.patter.factory.model.city.*;
 import com.design.patter.factory.model.enums.EPizzaStyleEnum;
 import com.design.patter.factory.model.enums.EPizzaTypeEnum;
 import com.design.patter.factory.v2.Pizza;
