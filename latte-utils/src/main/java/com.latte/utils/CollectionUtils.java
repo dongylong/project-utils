@@ -1,5 +1,6 @@
 package com.latte.utils;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -35,6 +36,12 @@ public class CollectionUtils {
         return objectDemoMap;
     }
 
+    public static void main(String[] args) {
+        HashMap<Integer, Integer> map = new HashMap();
+        map.put(1,1);
+        int xx = map.get(2);
+        System.out.println(xx);
+    }
     public static List<Integer> listClass2ListProperty(List<ObjectDemo> demoList) {
         List<Integer> nums = demoList.stream()
                 .map(ObjectDemo::getNum)
