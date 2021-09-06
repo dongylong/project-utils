@@ -1,12 +1,10 @@
 package com.latte.utils;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.Comparator.comparing;
 
 public class CollectionUtils {
 
@@ -24,6 +22,8 @@ public class CollectionUtils {
     public static <T> T useVarargs(T... args) {
         return args.length > 0 ? args[0] : null;
     }
+
+
 
     public <K, V extends Comparable<? super V>> Map<K, V> sortByValueReversed(Map<K, V> map) {
         Map<K, V> result = new LinkedHashMap<>();
@@ -43,10 +43,76 @@ public class CollectionUtils {
     }
 
 
+    public static void allMatchDemo(List<ObjectDemo> words) {
+        boolean b = words.stream()
+                .allMatch(objectDemo -> objectDemo.getNum() < 100);
+    }
+
+    public static void anyMatchDemo(List<ObjectDemo> words) {
+        boolean b = words.stream()
+                .anyMatch(objectDemo -> objectDemo.getNum() < 100);
+    }
+
+    public static void noneMatchDemo(List<ObjectDemo> words) {
+        boolean b = words.stream()
+                .noneMatch(objectDemo -> objectDemo.getNum() >= 100);
+    }
+
+    public static void reduceDemo(List<ObjectDemo> words) {
+        Integer reduce = words.stream()
+                .map(objectDemo -> objectDemo.getNum())
+                .reduce(0, (a, b) -> a + b);
+    }
+
+    public static void countDemo(List<ObjectDemo> words) {
+        long reduce = words.stream()
+                .map(objectDemo -> objectDemo.getNum())
+                .count();
+    }
+    public static String strJoiningDemo(List<ObjectDemo> words) {
+        String reduce = words
+                .stream()
+                .map(ObjectDemo::getStr)
+                .collect(Collectors.joining(","));
+        return reduce;
+    }
+
+
+    public static void flatMapDemo() {
+        List<String> words = new ArrayList<>();
+        words.add("hello");
+        words.add("world");
+        words.add("hi");
+        words.add("tom");
+        List<String> collect = words.stream()
+                .map(word -> word.split(""))
+                .flatMap(Arrays::stream)
+                .distinct()
+                .collect(Collectors.toList());
+        System.out.println(collect);
+    }
+
     public static Map<Integer, List<ObjectDemo>> list2KeyListMap(List<ObjectDemo> demoList) {
         Map<Integer, List<ObjectDemo>> objectDemoMap = demoList.stream()
                 .collect(Collectors.groupingBy(ObjectDemo::getNum));
         return objectDemoMap;
+    }
+
+    /**
+     * 按照String 排序
+     */
+    public static void compareListStringProperty(){
+        List<ObjectDemo> demoList = new ArrayList<>();
+        demoList.sort(new Comparator<ObjectDemo>() {
+            @Override
+            public int compare(ObjectDemo o1, ObjectDemo o2) {
+                return o1.getStr().compareTo(o2.getStr());
+            }
+        });
+        demoList.sort((o1, o2) -> o1.getStr().compareTo(o2.getStr()));
+        demoList.sort(Comparator.comparing(ObjectDemo::getStr));
+        demoList.sort(comparing(ObjectDemo::getStr));
+
     }
 
     public static Map<Integer, ObjectDemo> list2Map(List<ObjectDemo> demoList) {
@@ -56,12 +122,13 @@ public class CollectionUtils {
         return objectDemoMap;
     }
 
-    public static void main(String[] args) {
-        HashMap<Integer, Integer> map = new HashMap();
-        map.put(1,1);
-        int xx = map.get(2);
-        System.out.println(xx);
-    }
+//    public static void main(String[] args) {
+//        HashMap<Integer, Integer> map = new HashMap();
+//        map.put(1,1);
+//        int xx = map.get(2);
+//        System.out.println(xx);
+//    }
+
     public static List<Integer> listClass2ListProperty(List<ObjectDemo> demoList) {
         List<Integer> nums = demoList.stream()
                 .map(ObjectDemo::getNum)
