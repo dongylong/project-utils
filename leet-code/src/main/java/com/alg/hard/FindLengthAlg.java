@@ -16,8 +16,9 @@ public class FindLengthAlg {
      *          空间复杂度： O(N×M)O(N×M)。
      * @return
      */
-    public int findLength(int[] A, int[] B) {
-        int n = A.length, m = B.length;
+    public int findLengthByDP(int[] A, int[] B) {
+        int n = A.length;
+        int m = B.length;
         int[][] dp = new int[n + 1][m + 1];
         int ans = 0;
         for (int i = n - 1; i >= 0; i--) {
@@ -36,24 +37,26 @@ public class FindLengthAlg {
      * @param B
      * @return
      */
-    public int findLength1(int[] A, int[] B) {
-        int n = A.length, m = B.length;
+    public int findLength(int[] A, int[] B) {
+        int n = A.length;
+        int m = B.length;
         int ret = 0;
         for (int i = 0; i < n; i++) {
             int len = Math.min(m, n - i);
-            int maxlen = maxLength(A, B, i, 0, len);
-            ret = Math.max(ret, maxlen);
+            int maxLen = maxLength(A, B, i, 0, len);
+            ret = Math.max(ret, maxLen);
         }
         for (int i = 0; i < m; i++) {
             int len = Math.min(n, m - i);
-            int maxlen = maxLength(A, B, 0, i, len);
-            ret = Math.max(ret, maxlen);
+            int maxLen = maxLength(A, B, 0, i, len);
+            ret = Math.max(ret, maxLen);
         }
         return ret;
     }
 
     public int maxLength(int[] A, int[] B, int addA, int addB, int len) {
-        int ret = 0, k = 0;
+        int ret = 0;
+        int k = 0;
         for (int i = 0; i < len; i++) {
             if (A[addA + i] == B[addB + i]) {
                 k++;
@@ -70,7 +73,7 @@ public class FindLengthAlg {
      */
     int mod = 1000000009;
     int base = 113;
-    public int findLength2(int[] A, int[] B) {
+    public int findLengthByHash(int[] A, int[] B) {
         int left = 1, right = Math.min(A.length, B.length) + 1;
         while (left < right) {
             int mid = (left + right) >> 1;

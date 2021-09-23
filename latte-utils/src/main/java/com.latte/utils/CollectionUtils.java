@@ -78,6 +78,10 @@ public class CollectionUtils {
     }
 
 
+    public static void hashMapDemo() {
+        HashMap<String,Object> map = new HashMap<>();
+        map.entrySet().stream().toArray();
+    }
     public static void flatMapDemo() {
         List<String> words = new ArrayList<>();
         words.add("hello");

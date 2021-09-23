@@ -3,6 +3,9 @@ package com.alg.hard;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author dongyl-work
+ */
 public class IsScramble87 {
 
     int[][][] memo;
@@ -16,7 +19,14 @@ public class IsScramble87 {
         return dfs(0, 0, length);
     }
 
-    //第一个字符串从i1开始，第二个字符串从i2开始，子串的长度为length，是否和谐
+    /**
+     * 第一个字符串从i1开始，第二个字符串从i2开始，子串的长度为length，是否和谐
+     *
+     * @param i1
+     * @param i2
+     * @param length
+     * @return
+     */
     public boolean dfs(int i1, int i2, int length) {
         if (memo[i1][i2][length] != 0) {
             return memo[i1][i2][length] == 1;
@@ -27,7 +37,7 @@ public class IsScramble87 {
             return true;
         }
         //判断是否存在字符c在两个子串中出现的次数不同
-        if(!checkIfSimilar(i1,i2,length)){
+        if (!checkIfSimilar(i1, i2, length)) {
             memo[i1][i2][length] = -1;
             return false;
         }
