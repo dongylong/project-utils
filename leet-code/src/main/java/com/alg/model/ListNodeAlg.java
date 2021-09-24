@@ -5,6 +5,8 @@ public class ListNodeAlg {
     public static class ListNode {
         public int val;
         public ListNode next;
+        public ListNode prev;
+        public ListNode child;
 
         ListNode() {
         }
