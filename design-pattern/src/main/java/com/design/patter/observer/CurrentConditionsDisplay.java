@@ -1,5 +1,8 @@
 package com.design.patter.observer;
 
+/**
+ * 具体观察者
+ */
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
 

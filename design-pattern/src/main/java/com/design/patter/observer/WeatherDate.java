@@ -1,5 +1,8 @@
 package com.design.patter.observer;
 
+/**
+ * 具体主题
+ */
 public class WeatherDate implements Subject{//extends Observable
 
     @Override
