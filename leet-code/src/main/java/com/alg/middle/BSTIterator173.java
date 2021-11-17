@@ -14,7 +14,7 @@ public class BSTIterator173 {
     }
 
     public int next() {
-        while (cur!=null){
+        while (cur != null) {
             stack.push(cur);
             cur = cur.left;
         }
@@ -25,8 +25,7 @@ public class BSTIterator173 {
     }
 
     public boolean hasNext() {
-
-        return cur!=null ||!stack.isEmpty();
+        return cur != null || !stack.isEmpty();
     }
 
     public class TreeNode {

@@ -8,7 +8,7 @@ public class DelDumplates83 {
          ListNodeAlg.ListNode node = new  ListNodeAlg.ListNode(1, new  ListNodeAlg.ListNode(1, new  ListNodeAlg.ListNode(2, null)));
 //         ListNodeAlg.ListNode node = new  ListNodeAlg.ListNode(1, new  ListNodeAlg.ListNode(1, new  ListNodeAlg.ListNode(2, new  ListNodeAlg.ListNode(3, new  ListNodeAlg.ListNode(3, null)))));
         print(node);
-        delDumplates(node);
+        delDuplicates(node);
         System.out.println("----------");
         print(node);
     }
@@ -26,7 +26,7 @@ public class DelDumplates83 {
     }
 
 
-    private static  ListNodeAlg.ListNode delDumplates( ListNodeAlg.ListNode node) {
+    private static  ListNodeAlg.ListNode delDuplicates(ListNodeAlg.ListNode node) {
         if (node == null) {
             return node;
         }

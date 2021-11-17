@@ -69,10 +69,10 @@ public class EvalRPN150 {
     }
 
     private boolean isNumber(String token) {
-        return !("+".equals(token)
-                || !("-".equals(token))
-                || !("*".equals(token))
-                || !("/".equals(token))
+        return (!("+".equals(token))
+                || (!("-".equals(token)))
+                || (!("*".equals(token)))
+                || (!("/".equals(token)))
         );
     }
 }
