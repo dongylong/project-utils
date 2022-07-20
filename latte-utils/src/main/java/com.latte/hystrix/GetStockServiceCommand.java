@@ -99,7 +99,8 @@ public class GetStockServiceCommand extends HystrixCommand<String> {
     }
 
     /**
-     * 受withExecutionIsolationSemaphoreMaxConcurrentRequests 控制，若失败率非常高，则重新配置该参数。若最大并发超过该配置，则不执行getFallback，而是快速失败。
+     * 受withExecutionIsolationSemaphoreMaxConcurrentRequests 控制，若失败率非常高，则重新配置该参数。
+     * 若最大并发超过该配置，则不执行getFallback，而是快速失败。
      * todo
      * @return
      */

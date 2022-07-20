@@ -1,0 +1,2 @@
+PizzaIngredientFactory 实现为抽象工厂。每个子类使用区域供货商实现原料
+ChicagoPizzaIngredientFactory，NYPizzaIngredientFactory。以工厂方法实现抽象工厂创建的方法。
