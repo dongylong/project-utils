@@ -5,6 +5,11 @@ import java.util.Map;
 
 public class LRUCache {
 
+    private Map<Integer, DLinkedNode> cache = new HashMap<>();
+    private int size;
+    private int capacity;
+    private DLinkedNode head, tail;
+
     class DLinkedNode {
         int key;
         int value;
@@ -19,11 +24,6 @@ public class LRUCache {
             this.value = value;
         }
     }
-
-    private Map<Integer, DLinkedNode> cache = new HashMap<>();
-    private int size;
-    private int capacity;
-    private DLinkedNode head, tail;
 
     public LRUCache(int capacity) {
         this.size = 0;
