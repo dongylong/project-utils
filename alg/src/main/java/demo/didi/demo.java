@@ -1,4 +1,4 @@
-package com.study.demo.didi;
+package demo.didi;
 
 /**
  * 0   1   2   3

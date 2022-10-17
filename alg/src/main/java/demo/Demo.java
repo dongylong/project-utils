@@ -1,4 +1,4 @@
-package com.study.demo;
+package demo;
 
 import org.springframework.util.StringUtils;
 
@@ -82,7 +82,7 @@ public class Demo {
         for (int i = strLen; i >=0; i--) {
 
         }
-        return
+        return 0 ;
     }
     public int lengthOfLastWord(String s) {
         if (s.length() == 0 || s == null) return 0;

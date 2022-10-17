@@ -1,4 +1,4 @@
-package com.study.demo;
+package demo;
 
 public class PrintRotateArr {
     public static void main(String[] args) {

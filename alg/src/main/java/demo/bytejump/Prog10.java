@@ -1,4 +1,4 @@
-package com.study.demo.bytejump;
+package demo.bytejump;
 
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
