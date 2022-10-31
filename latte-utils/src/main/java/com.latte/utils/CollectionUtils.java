@@ -1,8 +1,7 @@
 package com.latte.utils;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -11,20 +10,66 @@ import static java.util.Comparator.comparing;
 
 public class CollectionUtils {
 
+
+    public static void main(String[] args) {
+//        streamNullDemo();
+        listNullDemo();
+    }
+
+    public static void OptionalStream() throws MalformedURLException {
+        Optional<List<String>> optional = Optional.ofNullable(new ArrayList<>(11));
+        Stream<List<String>> stream = optional.stream();
+        stream.flatMap(x -> x.stream()).forEach(System.out::println);
+        var xx = new ArrayList<>();
+        var url = new URL("xxx");
+    }
+
+    public static void streamIteratorDemo() {
+        Stream.iterate(1, i -> i + 1).limit(10).forEach(System.out::println);
+        Stream.iterate(1, i -> i < 100, i -> i + 1).forEach(System.out::println);
+
+    }
+
+    public static void listNullDemo() {
+        List<String> list = new ArrayList<>();
+        list.add("AA");
+        list.add(null);
+        //不报异常
+        System.out.println(list.stream().count());
+        List<String> list1 = new ArrayList<>();
+        list1.add(null);
+        //不报异常
+        System.out.println(list1.stream().count());
+    }
+
+    public static void streamOfNullAbleDemo() {
+        Stream<String> stringStream = Stream.of("AA", "BB", null);
+        //3
+        System.out.println(stringStream.count());
+        Stream<String> stringStream1 = Stream.of(null);
+        //error
+        System.out.println(stringStream1.count());
+
+        Stream<String> stringStream2 = Stream.ofNullable(null);
+        System.out.println(stringStream2.count());
+        Stream<String> stringStream3 = Stream.ofNullable("AAAB");
+        System.out.println(stringStream3.count());
+    }
+
     /**
-     * @SafeVarargs
-     *  {@link java.util.Collections} addAll method
-     *  开发人员确信使用变长度参数方法和泛型一起使用不会出错
-     *  只能用在参数长度可变方法上
-     *  且必须声明为static 或final
      * @param args
      * @param <T>
      * @return
+     * @SafeVarargs {@link java.util.Collections} addAll method
+     * 开发人员确信使用变长度参数方法和泛型一起使用不会出错
+     * 只能用在参数长度可变方法上
+     * 且必须声明为static 或final
      */
     @SafeVarargs
     public static <T> T useVarargs(T... args) {
         return args.length > 0 ? args[0] : null;
     }
+
     public <K, V extends Comparable<? super V>> Map<K, V> sortByValueReversed(Map<K, V> map) {
         Map<K, V> result = new LinkedHashMap<>();
         map.entrySet()
@@ -33,6 +78,7 @@ public class CollectionUtils {
                 .forEachOrdered(e -> result.put(e.getKey(), e.getValue()));
         return result;
     }
+
     public <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
         Map<K, V> result = new LinkedHashMap<>();
         map.entrySet()
@@ -51,7 +97,7 @@ public class CollectionUtils {
     /**
      * 按照String 排序
      */
-    public static void compareListStringProperty(){
+    public static void compareListStringProperty() {
         List<ObjectDemo> demoList = new ArrayList<>();
         demoList.sort(new Comparator<ObjectDemo>() {
             @Override
@@ -94,11 +140,12 @@ public class CollectionUtils {
 
     /**
      * 并行求和
+     *
      * @param values
      * @return
      */
-    private int addIntegers(List<Integer> values){
-        return values.parallelStream().mapToInt(i->i).sum();
+    private int addIntegers(List<Integer> values) {
+        return values.parallelStream().mapToInt(i -> i).sum();
     }
 
 
@@ -157,13 +204,14 @@ public class CollectionUtils {
 
     /**
      * 7.1 BinaryOperator 1-n规约流
+     *
      * @param n
      * @return
      */
-    private static long sequentialSum(long n){
+    private static long sequentialSum(long n) {
         return Stream.iterate(
-                //生成自然数无限流
-                1L, i -> i + 1)
+                        //生成自然数无限流
+                        1L, i -> i + 1)
                 //限制到前n个数
                 .limit(n)
                 //对所有数字求和来归纳流
@@ -172,13 +220,14 @@ public class CollectionUtils {
 
     /**
      * 7.1.1 并行流，函数规约
+     *
      * @param n
      * @return
      */
-    private static long parallelSum(long n){
+    private static long parallelSum(long n) {
         return Stream.iterate(
-                //生成自然数无限流
-                1L, i -> i + 1)
+                        //生成自然数无限流
+                        1L, i -> i + 1)
                 //限制到前n个数
                 .limit(n)
                 //将流转换成并行流
