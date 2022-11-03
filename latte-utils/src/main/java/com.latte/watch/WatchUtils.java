@@ -1,6 +1,5 @@
 package com.latte.watch;
 
-import org.omg.SendingContext.RunTime;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 
