@@ -1,8 +1,6 @@
 package com.latte.utils;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class IOUtils {
     public static String readFile(String path) throws IOException {
@@ -23,6 +21,18 @@ public class IOUtils {
                 builder.append(String.format("%n"));
             }
             return builder.toString();
+        }
+    }
+
+    public static void jdk9_feature() {
+        InputStreamReader reader = new InputStreamReader(System.in);
+        OutputStreamWriter writer = new OutputStreamWriter(System.out);
+        try (reader; writer) {
+            //reader是final的，不可再被赋值
+            //reader = null;
+            //具体读写操作省略
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

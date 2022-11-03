@@ -1,10 +1,10 @@
-package com.latte.feature;
+package com.latte.utils;
 
 import java.util.Optional;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class StringDemo {
+public class StringUtils {
 
     public static void main(String[] args) {
         String str = "xx";
@@ -53,6 +53,5 @@ public class StringDemo {
     public static void jdk8_feature(String str) {
         String join = String.join(",", "222", "111");
         System.out.println(join);
-
     }
 }
