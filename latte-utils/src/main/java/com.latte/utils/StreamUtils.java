@@ -1,6 +1,7 @@
 package com.latte.utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.function.IntFunction;
@@ -23,6 +24,26 @@ public class StreamUtils {
 
 
     public static void jdk11_feature() {
+
+    }
+
+    public static void jdk10_feature() {
+
+    }
+
+    public static void jdk9_feature() {
+        //增强的Stream API
+        //takeWhile:返回从开头开始的尽量多的元素
+        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8);
+        list.stream()
+                .takeWhile(x -> x < 5)
+                .forEach(System.out::println);
+        //dropWhile takeWhile 相反，返回剩余的元素
+        list.stream()
+                .dropWhile(x -> x < 5)
+                .forEach(System.out::println);
+        //ofNullable
+        //iterate 方法的新重载方法
 
     }
 
