@@ -1,4 +1,4 @@
-package com.study.demo;
+package demo;
 
 public class DeadLockDemo {
     private static Object lock1 = new Object();

@@ -1,4 +1,4 @@
-package com.study.demo;
+package demo;
 
 public class MenuDO {
     Long id;

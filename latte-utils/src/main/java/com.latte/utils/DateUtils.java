@@ -11,35 +11,38 @@ import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.SignStyle;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
-import java.util.List;
-import java.util.Objects;
 
 import static java.time.temporal.ChronoField.*;
-import static java.time.temporal.ChronoField.MINUTE_OF_HOUR;
 
 public class DateUtils {
     public static final String DEFAULT_START_DATE = "1900-1-1";
     public static final String YMD = "yyyy-MM-dd";
+    public static final DateTimeFormatter DEFAULT_DATE_FORMATTER = DateTimeFormatter.ofPattern(YMD);
+
     public static final String YMDHM = "yyyy-MM-dd HH:mm";
     public static final String YMDHMS = "yyyy-MM-dd HH:mm:ss";
+    public static final DateTimeFormatter DEFAULT_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern(YMDHMS);
+
     public static final String YMDHMSS = "yyyy-MM-dd HH:mm:ss:SS";
     public static final String USMMDDZZZYYYY = "EEE MMM dd HH:mm:ss zzz yyyy";
     public static final String HMS = "HH:mm:ss";
+    public static final DateTimeFormatter DEFAULT_TIME_FORMATTER = DateTimeFormatter.ofPattern(HMS);
     public static final String HM = "HH:mm";
     public static final String YMDHMS_STR = "yyyyMMddHHmmss";
+    public static final DateTimeFormatter DEFAULT_DATE_TIME_SIMPLE_FORMATTER = DateTimeFormatter.ofPattern(YMDHMS_STR);
+
     public static final String YMDHMSSS_STR = "yyyyMMddHHmmssSSS";
+    public static final DateTimeFormatter YMDHMSSS_STR_FORMATTER = DateTimeFormatter.ofPattern(YMDHMSSS_STR);
     public static final String Y = "yyyy";
     public static final String M = "MM";
     public static final String D = "dd";
-    public static final DateTimeFormatter DEFAULT_DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    public static final DateTimeFormatter DEFAULT_TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm:ss");
-    public static final DateTimeFormatter DEFAULT_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-    public static final DateTimeFormatter DEFAULT_DATE_TIME_SIMPLE_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
-    public static final DateTimeFormatter DEFAULT_DATE_TIME_SSSIMPLE_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
     public static final DateTimeFormatter DATE_FORMATTER_CN = DateTimeFormatter.ofPattern("yyyy年MM月dd日");
     public static final DateTimeFormatter DATE_TIME_FORMATTER_CN = DateTimeFormatter.ofPattern("yyyy年MM月dd日HH时mm分ss秒");
 
     public static final DateTimeFormatter DEFAULT_MONTH_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM");
+    public static final String YMDTHMSSZ_STR = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'";
+    public static final DateTimeFormatter YMDTHMSSZ_STR_FORMATTER = DateTimeFormatter.ofPattern(YMDTHMSSZ_STR);
+
 
     public static LocalDate string2DateByDay(String date) {
         return string2Date(date, DEFAULT_DATE_FORMATTER);
